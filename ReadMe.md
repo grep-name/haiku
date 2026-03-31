@@ -1,19 +1,28 @@
-# Haiku OS - FDT Support Development Fork
+# Haiku OS - The Research & Experimental Fork
 
 This repository is a development fork of the official [Haiku Operating System](https://github.com/haiku/haiku). 
 
-The primary focus of this fork is the implementation and enhancement of **Flattened Device Tree (FDT)** support within the Haiku kernel and bootloader. This work is essential for improving Haiku's hardware discovery capabilities on non-x86 architectures, specifically **ARM** and **RISC-V**.
+More than just a mirror, this fork serves as a **personal research laboratory** for implementing experimental features, testing low-level OS theories, and exploring kernel internals.
 
 ---
 
-## 🚀 Project Overview
+## 🔬 The Mission: "Research for the Community"
+The goal of this fork is to explore "what if" scenarios in systems programming. While much of the work here is driven by personal research and curiosity, the ultimate objective is to refine these experiments into stable contributions that may eventually benefit the wider Haiku community.
 
-In architectures like ARM and RISC-V, hardware is not "self-discoverable" (unlike PCI on x86). The operating system relies on an **FDT** (passed as a `.dtb` blob) to understand the memory map, CPU topology, and peripheral addresses.
+## 🛠 What's Happening Here?
+* **Experimental Implementation:** This is where I "move fast and break things." If a new idea for the kernel or bootloader needs testing, it happens here first.
+* **Personal Research:** Deep dives into OS internals, memory management, and driver models.
+* **Upstream Preparation:** Once an experiment proves successful and stable, it is cleaned up and prepared for the official Haiku Gerrit review process.
 
-### Key Objectives:
-* **FDT Parsing:** Enhancing the existing FDT parsing logic in the Haiku bootloader.
-* **Driver Mapping:** Streamlining how the Haiku driver model interacts with FDT nodes to initialize platform devices.
-* **Libfdt Integration:** Ensuring robust integration with `libfdt` while adhering to Haiku's strict coding standards.
-* **Architecture Parity:** Bringing ARM/RISC-V boot sequences closer to the stability found in the x86_64 port.
+---
 
-## 🛠 Current Status
+## 📑 Research Topic
+* ---
+
+## 🤝 Community & Upstreaming
+I believe in "open research." While this is a personal sandbox, I am committed to the Haiku ecosystem.
+* **Stable Patches:** [review.haiku-os.org](https://review.haiku-os.org/)
+* **Discussion:** You can often find me on the Haiku IRC or forums discussing these experiments.
+
+---
+*Disclaimer: This fork contains experimental code. Use at your own risk. For the stable Haiku experience, visit [haiku-os.org](https://www.haiku-os.org).*
