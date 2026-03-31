@@ -1,61 +1,19 @@
-Haiku
-=======================
-**[Homepage](https://www.haiku-os.org/)
-| [Mailing Lists](https://www.haiku-os.org/community/ml)
-| [IRC Channels](https://www.haiku-os.org/community/irc)
-| [Issue Tracker](https://dev.haiku-os.org/)
-| [API docs](https://api.haiku-os.org)**
+Haiku OS - FDT Support Development Fork
 
-Haiku is an open-source operating system that specifically targets personal
-computing. Inspired by the BeOS, Haiku is fast, simple to use, easy to learn
-and yet very powerful.
+This repository is a development fork of the official Haiku Operating System.
 
-Goals
-------------
- * Sensible defaults with minimal configuration required.
- * Clean, clear, concise code.
- * Unified desktop environment.
+The primary focus of this fork is the implementation and enhancement of Flattened Device Tree (FDT) support within the Haiku kernel and bootloader. This work is essential for improving Haiku's hardware discovery capabilities on non-x86 architectures, specifically ARM and RISC-V.
+🚀 Project Overview
 
-Trying Haiku
----------------
-Haiku provides pre-built [nightly images](http://download.haiku-os.org/) and
-[release images](https://www.haiku-os.org/get-haiku). Haiku is compatible
-with a large variety of hardware, but in case you don't want to "take the
-plunge" and install Haiku on bare metal, you can install it on a virtual
-machine (VM) instead. If you've never used a VM before, you can follow one of
-the ["Emulating Haiku"](https://www.haiku-os.org/guides/virtualizing/) guides.
+In architectures like ARM and RISC-V, hardware is not "self-discoverable" (unlike PCI on x86). The operating system relies on an FDT (passed as a .dtb blob) to understand the memory map, CPU topology, and peripheral addresses.
+Key Objectives:
 
-Compiling Haiku
----------------
-See `ReadMe.Compiling`.
+    FDT Parsing: Enhancing the existing FDT parsing logic in the Haiku bootloader.
 
-Contributing
--------------------
-Haiku is a meritocratic open source project with a large variety of tasks. Even
-if you can't write code, *you can still help*! Haiku needs designers,
-(technical) writers, translators, testers... [Get involved](https://www.haiku-os.org/community/getting-involved/)
-and help out!
+    Driver Mapping: Streamlining how the Haiku driver model interacts with FDT nodes to initialize platform devices.
 
-### Contributing code
-If you're submitting a patch to us, please make sure you're following the
-[patch submitting guidelines](https://dev.haiku-os.org/wiki/CodingGuidelines/SubmittingPatches).
+    Libfdt Integration: Ensuring robust integration with libfdt while adhering to Haiku's strict coding standards.
 
-If you're having trouble finding something in the source tree, you can use
-one of our web-based source code browsers:
+    Architecture Parity: Bringing ARM/RISC-V boot sequences closer to the stability found in the x86_64 port.
 
- * https://grok.nikisoft.one/opengrok/ (OpenGrok, provided by Niklas Poslovski)
- * https://git.haiku-os.org/ (git, provided by Haiku, Inc.)
-
-### Contributing documentation
-The main piece of documentation that still needs work are the API docs (found
-in the tree at `docs/user`). Just find an undocumented class, write
-documentation for it, and [submit a patch](https://dev.haiku-os.org/wiki/CodingGuidelines/SubmittingPatches).
-
-### Contributing translations
-See [wiki:i18n](https://dev.haiku-os.org/wiki/i18n).
-
-### Contributing software ports
-See [HaikuPorts](https://github.com/haikuports/haikuports/).
-
-### Contributing to our infrastructure
-See [Infrastructure](https://github.com/haiku/infrastructure/).
+🛠 Current Status
